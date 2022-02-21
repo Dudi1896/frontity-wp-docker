@@ -83,6 +83,10 @@ define( 'AUTH_SALT',        getenv_docker('WORDPRESS_AUTH_SALT',        '8bd5e89
 define( 'SECURE_AUTH_SALT', getenv_docker('WORDPRESS_SECURE_AUTH_SALT', '0ab0c50c8bdfb788e51744dd58dca42c9687eefd') );
 define( 'LOGGED_IN_SALT',   getenv_docker('WORDPRESS_LOGGED_IN_SALT',   '3567c15373fa17ab3d2be1f218ea5267ddc86152') );
 define( 'NONCE_SALT',       getenv_docker('WORDPRESS_NONCE_SALT',       '3cb0d6a8535256a7a1ba1ac6d55e28ce30896e42') );
+
+define('JWT_AUTH_SECRET_KEY', 'secret');
+define('JWT_AUTH_CORS_ENABLE', true);
+
 // (See also https://wordpress.stackexchange.com/a/152905/199287)
 
 /**#@-*/
@@ -108,6 +112,7 @@ $table_prefix = getenv_docker('WORDPRESS_TABLE_PREFIX', 'wp_');
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', !!getenv_docker('WORDPRESS_DEBUG', '') );
+define('FS_METHOD','direct');
 
 /* Add any custom values between this line and the "stop editing" line. */
 
