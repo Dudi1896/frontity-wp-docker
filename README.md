@@ -1,4 +1,4 @@
-# wordpress-with-docker
+# frontity-wp-docker
 
 This project was bootstrapped with [Frontity](https://frontity.org/).
 
