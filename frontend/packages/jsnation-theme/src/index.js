@@ -1,14 +1,21 @@
-import Root from './Components';
+import Root from "./Components";
 
 export default {
   name: "jsnation-theme",
   roots: {
-    theme: Root
+    theme: Root,
   },
   state: {
-    theme: {}
+    theme: { isMenuOpen: false },
   },
   actions: {
-    theme: {}
-  }
+    theme: {
+      openMenu: ({ state }) => {
+        state.theme.isMenuOpen = true;
+      },
+      closeMenu: ({ state }) => {
+        state.theme.isMenuOpen = false;
+      },
+    },
+  },
 };
