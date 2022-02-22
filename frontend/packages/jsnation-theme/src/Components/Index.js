@@ -20,7 +20,7 @@ const Root = ({ state }) => {
                 font-family: sans-serif;
             `}
       />
-      <Header>
+      <Header isPostType={data.isPostType}>
         <HeaderContent>
         <h1>Frontity Workshop</h1>
         <p>Current URL: {state.router.link}</p>
@@ -47,7 +47,7 @@ const Header = styled.header`
   background-color: #eee;
   border-width: 0 0 8px 0;
   border-style: solid;
-  border-color: maroon;
+  border-color: ${ props => props.isPostType ? 'lightseagreen' : 'maroon'};
 `;
 
 const HeaderContent = styled.div`
@@ -59,6 +59,9 @@ const Menu = styled.nav`
     display: flex;
     flex-direction: row;
     margin-top: 1em;
+    & > div {
+        margin-right: 1em;
+    }
 `
 
 const Main = styled.main`
